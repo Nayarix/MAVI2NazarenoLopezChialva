@@ -1,0 +1,9 @@
+﻿  Box2dEmptyApp.cpp
+  Game.cpp
+U:\visual\Proyectos\Unidad2\Unidad2Actvidad1\EsqueletoAPP\Unidad2Actvidad1\Src\Game.cpp(14,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actvidad1\EsqueletoAPP\Unidad2Actvidad1\Src\Game.cpp(14,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  SFMLRenderer.cpp
+U:\visual\Proyectos\Unidad2\Unidad2Actvidad1\EsqueletoAPP\Unidad2Actvidad1\Src\SFMLRenderer.cpp(122,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actvidad1\EsqueletoAPP\Unidad2Actvidad1\Src\SFMLRenderer.cpp(122,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Generando código...
+  Box2dEmptyApp.vcxproj -> U:\visual\Proyectos\Unidad2\Unidad2Actvidad1\EsqueletoAPP\Unidad2Actvidad1\Bin\Debug\Unidad2Actvidad1.exe

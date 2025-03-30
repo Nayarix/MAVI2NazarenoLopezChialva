@@ -1,0 +1,114 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Build\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\SFMLRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Box2dEmptyApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\SFMLRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Box2DHelper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SFMLRenderer.cpp",
+              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\SFMLRenderer.cpp",
+              "RelativeDocumentMoniker": "..\\Src\\SFMLRenderer.cpp",
+              "ToolTip": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\SFMLRenderer.cpp",
+              "RelativeToolTip": "..\\Src\\SFMLRenderer.cpp",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAiwI0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-29T18:11:44.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Game.cpp",
+              "RelativeDocumentMoniker": "..\\Src\\Game.cpp",
+              "ToolTip": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Game.cpp",
+              "RelativeToolTip": "..\\Src\\Game.cpp",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAQwIAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-29T18:11:43.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Box2dEmptyApp.cpp",
+              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Box2dEmptyApp.cpp",
+              "RelativeDocumentMoniker": "..\\Src\\Box2dEmptyApp.cpp",
+              "ToolTip": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Box2dEmptyApp.cpp",
+              "RelativeToolTip": "..\\Src\\Box2dEmptyApp.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-29T18:11:43.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SFMLRenderer.h",
+              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\SFMLRenderer.h",
+              "RelativeDocumentMoniker": "..\\Src\\SFMLRenderer.h",
+              "ToolTip": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\SFMLRenderer.h",
+              "RelativeToolTip": "..\\Src\\SFMLRenderer.h",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-29T18:11:42.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Game.h",
+              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Game.h",
+              "RelativeDocumentMoniker": "..\\Src\\Game.h",
+              "ToolTip": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Game.h",
+              "RelativeToolTip": "..\\Src\\Game.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAQwCYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-29T18:11:41.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Box2DHelper.h",
+              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Box2DHelper.h",
+              "RelativeDocumentMoniker": "..\\Src\\Box2DHelper.h",
+              "ToolTip": "U:\\visual\\Proyectos\\Unidad2\\Unidad2Actividad2\\EsqueletoAPP\\Unidad2Actividad2\\Src\\Box2DHelper.h",
+              "RelativeToolTip": "..\\Src\\Box2DHelper.h",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAiwOAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-29T18:11:39.037Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

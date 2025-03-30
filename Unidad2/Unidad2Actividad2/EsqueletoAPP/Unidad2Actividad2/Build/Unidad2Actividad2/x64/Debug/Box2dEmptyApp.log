@@ -1,0 +1,17 @@
+﻿  Box2dEmptyApp.cpp
+  Game.cpp
+  SFMLRenderer.cpp
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(50,55): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(50,55): warning C4244:         with
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(50,55): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(50,55): warning C4244:             T=float
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(50,55): warning C4244:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(55,56): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(55,56): warning C4244:         with
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(55,56): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(55,56): warning C4244:             T=float
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(55,56): warning C4244:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\SFMLRenderer.cpp(121,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\SFMLRenderer.cpp(121,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Generando código...
+  Box2dEmptyApp.vcxproj -> U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Bin\Debug\Box2dEmptyApp.exe

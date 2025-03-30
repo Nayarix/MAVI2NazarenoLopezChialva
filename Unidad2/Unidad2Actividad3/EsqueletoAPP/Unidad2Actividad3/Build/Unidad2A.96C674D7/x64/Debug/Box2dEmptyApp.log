@@ -1,0 +1,4 @@
+﻿  SFMLRenderer.cpp
+U:\visual\Proyectos\Unidad2\Unidad2Actividad3\EsqueletoAPP\Unidad2Actividad3\Src\SFMLRenderer.cpp(122,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad3\EsqueletoAPP\Unidad2Actividad3\Src\SFMLRenderer.cpp(122,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Box2dEmptyApp.vcxproj -> U:\visual\Proyectos\Unidad2\Unidad2Actividad3\EsqueletoAPP\Unidad2Actividad3\Bin\Debug\Unidad2Actividad3.exe

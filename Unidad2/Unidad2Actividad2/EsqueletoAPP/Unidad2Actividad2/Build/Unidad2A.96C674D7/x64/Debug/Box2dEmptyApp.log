@@ -1,0 +1,45 @@
+﻿  Box2dEmptyApp.cpp
+  Game.cpp
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(37,86): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(37,86): warning C4244:         with
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(37,86): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(37,86): warning C4244:             T=unsigned int
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(37,86): warning C4244:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(41,86): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(41,86): warning C4244:         with
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(41,86): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(41,86): warning C4244:             T=unsigned int
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(41,86): warning C4244:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(45,101): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(45,101): warning C4244:         with
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(45,101): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(45,101): warning C4244:             T=unsigned int
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(45,101): warning C4244:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(49,99): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(49,99): warning C4244:         with
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(49,99): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(49,99): warning C4244:             T=unsigned int
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(49,99): warning C4244:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(65,57): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(65,57): warning C4244:         with
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(65,57): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(65,57): warning C4244:             T=unsigned int
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(65,57): warning C4244:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(65,57): warning C4244:         and
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(65,57): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(65,57): warning C4244:             T=float
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(65,57): warning C4244:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(78,53): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(78,53): warning C4244:         with
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(78,53): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(78,53): warning C4244:             T=unsigned int
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(78,53): warning C4244:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(78,53): warning C4244:         and
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(78,53): warning C4244:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(78,53): warning C4244:             T=float
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\Game.cpp(78,53): warning C4244:         ]
+  SFMLRenderer.cpp
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\SFMLRenderer.cpp(122,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Src\SFMLRenderer.cpp(122,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Generando código...
+  Box2dEmptyApp.vcxproj -> U:\visual\Proyectos\Unidad2\Unidad2Actividad2\EsqueletoAPP\Unidad2Actividad2\Bin\Debug\Unidad2Actividad2.exe

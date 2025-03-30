@@ -1,0 +1,13 @@
+﻿  Box2dEmptyApp.cpp
+  Game.cpp
+U:\visual\Proyectos\Unidad2\Unidad2Actividad4\EsqueletoAPP\Unidad2Actividad4\Src\Game.cpp(56,78): warning C4305: 'argumento': truncamiento de 'int' a 'const _Elem'
+U:\visual\Proyectos\Unidad2\Unidad2Actividad4\EsqueletoAPP\Unidad2Actividad4\Src\Game.cpp(56,78): warning C4305:         with
+U:\visual\Proyectos\Unidad2\Unidad2Actividad4\EsqueletoAPP\Unidad2Actividad4\Src\Game.cpp(56,78): warning C4305:         [
+U:\visual\Proyectos\Unidad2\Unidad2Actividad4\EsqueletoAPP\Unidad2Actividad4\Src\Game.cpp(56,78): warning C4305:             _Elem=char
+U:\visual\Proyectos\Unidad2\Unidad2Actividad4\EsqueletoAPP\Unidad2Actividad4\Src\Game.cpp(56,78): warning C4305:         ]
+U:\visual\Proyectos\Unidad2\Unidad2Actividad4\EsqueletoAPP\Unidad2Actividad4\Src\Game.cpp(56,78): warning C4309: 'argumento': truncamiento de valor constante
+  SFMLRenderer.cpp
+U:\visual\Proyectos\Unidad2\Unidad2Actividad4\EsqueletoAPP\Unidad2Actividad4\Src\SFMLRenderer.cpp(122,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad2\Unidad2Actividad4\EsqueletoAPP\Unidad2Actividad4\Src\SFMLRenderer.cpp(122,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Generando código...
+  Box2dEmptyApp.vcxproj -> U:\visual\Proyectos\Unidad2\Unidad2Actividad4\EsqueletoAPP\Unidad2Actividad4\Bin\Debug\Unidad2Actividad4.exe
