@@ -1,0 +1,29 @@
+﻿  Box2dEmptyApp.cpp
+  Game.cpp
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(34,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(38,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(42,81): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(46,81): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(61,57): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(61,57): warning C4244:         with
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(61,57): warning C4244:         [
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(61,57): warning C4244:             T=unsigned int
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(61,57): warning C4244:         ]
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(61,57): warning C4244:         and
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(61,57): warning C4244:         [
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(61,57): warning C4244:             T=float
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(61,57): warning C4244:         ]
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(70,53): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(70,53): warning C4244:         with
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(70,53): warning C4244:         [
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(70,53): warning C4244:             T=unsigned int
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(70,53): warning C4244:         ]
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(70,53): warning C4244:         and
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(70,53): warning C4244:         [
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(70,53): warning C4244:             T=float
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\Game.cpp(70,53): warning C4244:         ]
+  SFMLRenderer.cpp
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\SFMLRenderer.cpp(122,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Src\SFMLRenderer.cpp(122,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Generando código...
+  Box2dEmptyApp.vcxproj -> U:\visual\Proyectos\Unidad3\Actividad1\Unidad3Actividad1\Bin\Debug\Unidad3Actividad1.exe
