@@ -47,33 +47,78 @@ Ragdoll::Ragdoll(b2World* world, const b2Vec2& position) {
     piernaDer->SetTransform(position + b2Vec2(0.3f, 1.7f), 0.0f);
 
     
-    auto CreateFlexibleJoint = [world](b2Body* bodyA, b2Body* bodyB, const b2Vec2& anchorA, const b2Vec2& anchorB) {
+    auto CreateFlexibleJoint = [world](b2Body* bodyA, b2Body* bodyB, const b2Vec2& anchorA, const b2Vec2& anchorB, float stiffness, float damping) {
         b2DistanceJointDef jointDef;
         jointDef.Initialize(bodyA, bodyB,
             bodyA->GetWorldPoint(anchorA),
             bodyB->GetWorldPoint(anchorB));
-        jointDef.length = 0.3f;
         jointDef.collideConnected = true;
-        jointDef.stiffness = 5.0f;
-        jointDef.damping = 0.5f;
+        jointDef.stiffness = stiffness;
+        jointDef.damping = damping;
         return world->CreateJoint(&jointDef);
         };
 
  
-    cuello = CreateFlexibleJoint(torso, cabeza, b2Vec2(0.0f, -0.85f), b2Vec2(0.0f, 0.5f));
-    hombroIzq = CreateFlexibleJoint(torso, brazoIzq, b2Vec2(-0.5f, 0.0f), b2Vec2(0.6f, 0.0f));
-    hombroDer = CreateFlexibleJoint(torso, brazoDer, b2Vec2(0.5f, 0.0f), b2Vec2(-0.6f, 0.0f));
-    caderaIzq = CreateFlexibleJoint(torso, piernaIzq, b2Vec2(-0.2f, 0.85f), b2Vec2(0.0f, -0.6f));
-    caderaDer = CreateFlexibleJoint(torso, piernaDer, b2Vec2(0.2f, 0.85f), b2Vec2(0.0f, -0.6f));
+    auto CreateHingeJoint = [world](b2Body* bodyA, b2Body* bodyB, const b2Vec2& anchor) {
+        b2RevoluteJointDef jointDef;
+        jointDef.Initialize(bodyA, bodyB, bodyA->GetWorldPoint(anchor));
+        jointDef.collideConnected = false; // Importante: que la pierna no choque con el torso
+        // Opcional: jointDef.enableLimit = true; // Para limitar el giro de la rodilla
+        return world->CreateJoint(&jointDef);
+        };  
+
+
+    // Lambda para Soldaduras (Weld Joint)
+    auto CreateHardWeld = [world](b2Body* bodyA, b2Body* bodyB, const b2Vec2& anchor) {
+        b2WeldJointDef jointDef;
+        // Initialize pide: Quién A, Quién B, y DÓNDE se pegan (punto mundial)
+        jointDef.Initialize(bodyA, bodyB, bodyA->GetWorldPoint(anchor));
+
+        jointDef.collideConnected = false; // No chocar entre ellos
+
+        return world->CreateJoint(&jointDef);
+        };
+
+
+
+    cuello = CreateFlexibleJoint(torso, cabeza, b2Vec2(0.0f, -0.85f), b2Vec2(0.0f, 0.5f), 0.1f, 0.0f);
+    hombroIzq = CreateFlexibleJoint(torso, brazoIzq, b2Vec2(-0.5f, 0.0f), b2Vec2(0.6f, 0.0f), 2.0f, 0.2f);
+    hombroDer = CreateFlexibleJoint(torso, brazoDer, b2Vec2(0.5f, 0.0f), b2Vec2(-0.6f, 0.0f), 2.0f, 0.2f);
+    // Usamos la bisagra. El vector es la posición RELATIVA en el Torso donde va la pierna.
+    caderaIzq = CreateHingeJoint(torso, piernaIzq, b2Vec2(-0.4f, 0.9f));
+    caderaDer = CreateHingeJoint(torso, piernaDer, b2Vec2(0.4f, 0.9f));
+
+
+    // --- CREACIÓN DEL ESCUDO ---
+
+// 1. Crear el cuerpo físico del escudo
+// Mide 0.2m de ancho x 0.8m de alto (Un rectángulo alto)
+// Densidad 5.0f (Muy pesado, para que parezca metal y proteja)
+    escudo = Box2DHelper::CreateRectangularDynamicBody(world, 1.2f, 0.8f, 1.0f, 0.5f, 0.1f);
+
+    // 2. Posicionarlo inicialmente
+    // Lo ponemos justo donde está el brazo izquierdo para que no "salte" al crearse
+    escudo->SetTransform(brazoIzq->GetPosition(), 0.0f);
+
+	//Para cambiar la posicion del objeto:
+    //b2Vec2 posicionMano = brazoIzq->GetWorldPoint(b2Vec2(0.0f, 1.0f));
+    //escudo->SetTransform(posicionMano, 0.0f);
+
+    // 3. SOLDARLO
+    // Anchor (0.0f, 0.5f):
+    // X=0.0 (Centro del brazo a lo ancho)
+    // Y=0.5 (En el borde inferior del brazo, hacia la mano)
+    CreateHardWeld(brazoIzq, escudo, b2Vec2(0.0f, 0.5f));
 }
 
 void Ragdoll::ApplyImpulse(const b2Vec2& impulse) {
-    cabeza->ApplyLinearImpulse(impulse, cabeza->GetWorldCenter(), true);
-    torso->ApplyLinearImpulse(impulse, torso->GetWorldCenter(), true);
-    brazoIzq->ApplyLinearImpulse(impulse, brazoIzq->GetWorldCenter(), true);
-    brazoDer->ApplyLinearImpulse(impulse, brazoDer->GetWorldCenter(), true);
-    piernaIzq->ApplyLinearImpulse(impulse, piernaIzq->GetWorldCenter(), true);
-    piernaDer->ApplyLinearImpulse(impulse, piernaDer->GetWorldCenter(), true);
+    //cabeza->ApplyLinearImpulse(impulse, cabeza->GetWorldCenter(), true);
+    b2Vec2 impulsePotente(impulse.x * 5.0f, impulse.y * 5.0f);
+    torso->ApplyLinearImpulse(impulsePotente, torso->GetWorldCenter(), true);
+    //brazoIzq->ApplyLinearImpulse(impulse, brazoIzq->GetWorldCenter(), true);
+    //brazoDer->ApplyLinearImpulse(impulse, brazoDer->GetWorldCenter(), true);
+    //piernaIzq->ApplyLinearImpulse(impulse, piernaIzq->GetWorldCenter(), true);
+    //piernaDer->ApplyLinearImpulse(impulse, piernaDer->GetWorldCenter(), true);
 }
 
 Obstaculo::Obstaculo(b2World* world, const b2Vec2& position, float width, float height, bool estatico, const sf::Color& col)
@@ -171,6 +216,8 @@ void Game::CreateObstacles() {
     obstaculos.push_back(std::make_unique<Obstaculo>(
         physicsWorld, b2Vec2(20.0f, 8.0f), 0.5f, 3.0f, true, sf::Color(150, 150, 150)));
 
+    obstaculos.push_back(std::make_unique<Obstaculo>(
+        physicsWorld, b2Vec2(15.0f, 10.0f), 0.5f, 3.0f, true, sf::Color(150, 150, 150)));
     
     obstaculos.push_back(std::make_unique<Obstaculo>(
         physicsWorld, b2Vec2(15.0f, 5.0f), 1.0f, 1.0f, false, sf::Color(255, 165, 0)));
@@ -285,7 +332,13 @@ void Game::Render() {
         DrawBody(ragdoll->brazoDer, sf::Color::Red);
         DrawBody(ragdoll->piernaIzq, sf::Color::Yellow);
         DrawBody(ragdoll->piernaDer, sf::Color::Yellow);
+        
+        if (ragdoll->escudo) { // Chequeo de seguridad por si acaso
+            DrawBody(ragdoll->escudo, sf::Color(100, 100, 100)); // Color Gris Metal
+        }
+
     }
+
 
     window->display();
 }

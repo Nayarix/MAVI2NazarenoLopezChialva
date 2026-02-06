@@ -15,6 +15,7 @@ public:
     b2Body* brazoDer;
     b2Body* piernaIzq;
     b2Body* piernaDer;
+    b2Body* escudo;
 
     b2Joint* cuello;
     b2Joint* hombroIzq;

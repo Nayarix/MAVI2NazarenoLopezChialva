@@ -1,109 +1,108 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Build\\",
+  "WorkspaceRootPath": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Build\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 100,
+      "VerticalTabListWidth": 136,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Game.cpp",
-              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Game.cpp",
-              "RelativeDocumentMoniker": "..\\Src\\Game.cpp",
-              "ToolTip": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Game.cpp",
-              "RelativeToolTip": "..\\Src\\Game.cpp",
-              "ViewState": "AgIAAB0BAAAAAAAAAAAAAC4BAAAXAAAAAAAAAA==",
+              "Title": "SFMLRenderer.cpp",
+              "DocumentMoniker": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.cpp",
+              "RelativeDocumentMoniker": "..\\Src\\SFMLRenderer.cpp",
+              "ToolTip": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.cpp",
+              "RelativeToolTip": "..\\Src\\SFMLRenderer.cpp",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-29T16:32:36.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Game.h",
-              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Game.h",
-              "RelativeDocumentMoniker": "..\\Src\\Game.h",
-              "ToolTip": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Game.h",
-              "RelativeToolTip": "..\\Src\\Game.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-29T16:32:28.14Z"
+              "WhenOpened": "2025-12-22T20:24:08.664Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Box2dEmptyApp.cpp",
-              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp",
-              "RelativeDocumentMoniker": "..\\Src\\Box2dEmptyApp.cpp",
-              "ToolTip": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp",
-              "RelativeToolTip": "..\\Src\\Box2dEmptyApp.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.cpp",
+              "RelativeDocumentMoniker": "..\\Src\\Game.cpp",
+              "ToolTip": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.cpp",
+              "RelativeToolTip": "..\\Src\\Game.cpp",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAGAAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-29T16:32:10.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SFMLRenderer.cpp",
-              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.cpp",
-              "RelativeDocumentMoniker": "..\\Src\\SFMLRenderer.cpp",
-              "ToolTip": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.cpp",
-              "RelativeToolTip": "..\\Src\\SFMLRenderer.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-29T16:31:59.97Z",
+              "WhenOpened": "2025-12-22T20:24:07.977Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SFMLRenderer.h",
-              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.h",
-              "RelativeDocumentMoniker": "..\\Src\\SFMLRenderer.h",
-              "ToolTip": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.h",
-              "RelativeToolTip": "..\\Src\\SFMLRenderer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-29T16:31:56.232Z"
+              "Title": "Box2dEmptyApp.cpp",
+              "DocumentMoniker": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp",
+              "RelativeDocumentMoniker": "..\\Src\\Box2dEmptyApp.cpp",
+              "ToolTip": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp",
+              "RelativeToolTip": "..\\Src\\Box2dEmptyApp.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-22T20:24:07.352Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Box2DHelper.h",
-              "DocumentMoniker": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h",
-              "RelativeDocumentMoniker": "..\\Src\\Box2DHelper.h",
-              "ToolTip": "U:\\visual\\Proyectos\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h",
-              "RelativeToolTip": "..\\Src\\Box2DHelper.h",
-              "ViewState": "AgIAANIAAAAAAAAAAAAAANQAAAAAAAAAAAAAAA==",
+              "Title": "SFMLRenderer.h",
+              "DocumentMoniker": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.h",
+              "RelativeDocumentMoniker": "..\\Src\\SFMLRenderer.h",
+              "ToolTip": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.h",
+              "RelativeToolTip": "..\\Src\\SFMLRenderer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-29T16:31:44.532Z"
+              "WhenOpened": "2025-12-22T20:23:50.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Game.h",
+              "DocumentMoniker": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.h",
+              "RelativeDocumentMoniker": "..\\Src\\Game.h",
+              "ToolTip": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.h",
+              "RelativeToolTip": "..\\Src\\Game.h",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-22T20:23:50.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Box2DHelper.h",
+              "DocumentMoniker": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h",
+              "RelativeDocumentMoniker": "..\\Src\\Box2DHelper.h",
+              "ToolTip": "C:\\ProyectosVisual\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h",
+              "RelativeToolTip": "..\\Src\\Box2DHelper.h",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-22T20:23:46.891Z"
             }
           ]
         }
