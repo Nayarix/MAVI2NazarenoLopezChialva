@@ -32,10 +32,20 @@ public:
     b2Body* body;
     sf::Color color;
     bool esEstatico;
+    sf::Sprite spriteVisual;
 
-    Obstaculo(b2World* world, const b2Vec2& position, float width, float height, bool estatico, const sf::Color& col);
-    void Draw(sf::RenderWindow* window, float pixelsToMeters) const;
+    Obstaculo(b2World* world, const b2Vec2& position, float width, float height, bool estatico, sf::Texture& textura);
+    void Draw(sf::RenderWindow* window) const;
 };
+
+enum class GameState {
+    MAIN_MENU,
+    LEVEL_SELECT,
+    RAGDOLL_GUIDE,
+    PLAYING
+};
+
+
 
 class Game {
 private:
@@ -43,6 +53,8 @@ private:
     b2World* physicsWorld;
     SFMLRenderer* debugRenderer;
 
+    sf::Texture texturaCaja;
+    sf::Texture texturaPlataforma;
     
     sf::RectangleShape cannonBase;
     sf::RectangleShape cannonBarrel;
@@ -59,6 +71,28 @@ private:
     const float MIN_CANNON_POWER = 5.0f;
     const float MAX_DISTANCE = 300.0f;
 
+    GameState estadoActual;
+    int nivelSeleccionado; // 1, 2 o 3
+
+    // UI Elements
+    sf::Font fuente;
+    // Podrías usar un pequeño struct para botones para que sea más limpio
+    struct Boton {
+        sf::RectangleShape forma;
+        sf::Text texto;
+    };
+
+    // Botones del Menú Principal
+    Boton btnCerrar, btnNiveles, btnGuia;
+    // Botones de Selección de Nivel
+    Boton btnLvl1, btnLvl2, btnLvl3, btnVolver;
+    // Botón durante el juego
+    Boton btnMenuPrincipal;
+
+
+    void InicializarBotones();
+    void CargarNivel(int num);
+
 public:
     Game(int width, int height, const std::string& title);
     ~Game();
@@ -71,5 +105,8 @@ public:
     void CreateBoundaries(float width, float height);
     void CreateObstacles(); 
     float CalculatePower(const sf::Vector2f& mousePos);
-    void DrawBody(b2Body* body, const sf::Color& color);
+    void DrawBody(b2Body* body, const sf::Color& color); 
+    bool EsClicEnBoton(const Boton& b, const sf::Vector2i& mousePos);
+    void LimpiarMundo();
 };
+
