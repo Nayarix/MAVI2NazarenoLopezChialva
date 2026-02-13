@@ -93,34 +93,13 @@ Ragdoll::Ragdoll(b2World* world, const b2Vec2& position) {
 
 
 
+    // 3. CONECTAR TODO CON RESORTES (Springs)
     cuello = CreateFlexibleJoint(torso, cabeza, b2Vec2(0.0f, -0.4f), b2Vec2(0.0f, 0.3f), 0.1f, 0.0f);
     hombroIzq = CreateFlexibleJoint(torso, brazoIzq, b2Vec2(-0.25f, 0.0f), b2Vec2(0.3f, 0.0f), 2.0f, 0.2f);
     hombroDer = CreateFlexibleJoint(torso, brazoDer, b2Vec2(0.25f, 0.0f), b2Vec2(-0.3f, 0.0f), 2.0f, 0.2f);
-    // Usamos la bisagra. El vector es la posición RELATIVA en el Torso donde va la pierna.
-    caderaIzq = CreateHingeJoint(torso, piernaIzq, b2Vec2(-0.1f, 0.4f));
-    caderaDer = CreateHingeJoint(torso, piernaDer, b2Vec2(0.1f, 0.4f));
+    caderaIzq = CreateFlexibleJoint(torso, piernaIzq, b2Vec2(-0.1f, 0.4f), b2Vec2(0.0f, -0.3f), 2.0f, 0.2f);
+    caderaDer = CreateFlexibleJoint(torso, piernaDer, b2Vec2(0.1f, 0.4f), b2Vec2(0.0f, -0.3f), 2.0f, 0.2f);
 
-
-    // --- CREACIÓN DEL ESCUDO ---
-
-// 1. Crear el cuerpo físico del escudo
-// Mide 0.2m de ancho x 0.8m de alto (Un rectángulo alto)
-// Densidad 5.0f (Muy pesado, para que parezca metal y proteja)
-    escudo = Box2DHelper::CreateRectangularDynamicBody(world, 0.2f, 0.2f, 1.0f, 0.5f, 0.1f);
-
-    // 2. Posicionarlo inicialmente
-    // Lo ponemos justo donde está el brazo izquierdo para que no "salte" al crearse
-    escudo->SetTransform(brazoIzq->GetPosition(), 0.0f);
-
-	//Para cambiar la posicion del objeto:
-    //b2Vec2 posicionMano = brazoIzq->GetWorldPoint(b2Vec2(0.0f, 1.0f));
-    //escudo->SetTransform(posicionMano, 0.0f);
-
-    // 3. SOLDARLO
-    // Anchor (0.0f, 0.5f):
-    // X=0.0 (Centro del brazo a lo ancho)
-    // Y=0.5 (En el borde inferior del brazo, hacia la mano)
-    CreateHardWeld(brazoIzq, escudo, b2Vec2(0.0f, 0.1f));
 }
 
 void Ragdoll::ApplyImpulse(const b2Vec2& impulse) {
@@ -347,6 +326,30 @@ void Game::HandleEvents() {
 void Game::Update(float deltaTime) {
     physicsWorld->Step(deltaTime, 8, 3);
     UpdateCannonRotation();
+
+    // LÓGICA DE DESAPARICIÓN (5 segundos)
+    for (auto it = ragdolls.begin(); it != ragdolls.end(); ) {
+        // 1. Sumar el tiempo transcurrido al ragdoll
+        (*it)->tiempoVida += deltaTime;
+
+        // 2. Si superó los 5 segundos, lo eliminamos
+        if ((*it)->tiempoVida >= 5.0f) {
+            // ¡VITAL! Antes de borrar el objeto de C++, hay que destruir los cuerpos en Box2D
+            physicsWorld->DestroyBody((*it)->cabeza);
+            physicsWorld->DestroyBody((*it)->torso);
+            physicsWorld->DestroyBody((*it)->brazoIzq);
+            physicsWorld->DestroyBody((*it)->brazoDer);
+            physicsWorld->DestroyBody((*it)->piernaIzq);
+            physicsWorld->DestroyBody((*it)->piernaDer);
+       
+
+            // Borrar del vector y obtener el siguiente iterador válido
+            it = ragdolls.erase(it);
+        }
+        else {
+            ++it; // Avanzar al siguiente si no expiró
+        }
+    }
 }
 
 void Game::Render() {
@@ -366,7 +369,7 @@ void Game::Render() {
         window->draw(btnVolver.forma); window->draw(btnVolver.texto);
     }
     else if (estadoActual == GameState::RAGDOLL_GUIDE) {
-        sf::Text guia("GUIA:\n1. Apunta con el Mouse\n2. Clic para disparar\n3. No dejes que los Ragdolls se acumulen\n\nClic para volver", fuente, 20);
+        sf::Text guia("GUIA:\n1. Apunta con el Mouse\n2. Clic para disparar\n3. Golpea todas las cajas\n\nClic para volver", fuente, 20);
         guia.setPosition(200, 200);
         window->draw(guia);
     }
@@ -375,6 +378,15 @@ void Game::Render() {
         window->draw(cannonBase);
         window->draw(cannonBarrel);
         for (auto& obs : obstaculos) obs->Draw(window);
+
+        sf::Text contador;
+        contador.setFont(fuente);
+        // Usamos .size() del vector para saber cuántos hay activos
+        contador.setString("Ragdolls Activos: " + std::to_string(ragdolls.size()));
+        contador.setCharacterSize(20);
+        contador.setFillColor(sf::Color::White);
+        contador.setPosition(10.0f, 10.0f); // Arriba a la izquierda
+        window->draw(contador);
 
         // 2. DIBUJAR RAGDOLLS COMPLETOS
         for (auto& rag : ragdolls) {
@@ -385,10 +397,6 @@ void Game::Render() {
             DrawBody(rag->piernaIzq, sf::Color::Yellow);
             DrawBody(rag->piernaDer, sf::Color::Yellow);
 
-            // Dibujar el escudo si existe
-            if (rag->escudo) {
-                DrawBody(rag->escudo, sf::Color(100, 100, 100)); // Gris metalizado
-            }
         }
 
         // 3. Dibujar la interfaz del juego (Botón menú y contador si lo tienes)
@@ -552,7 +560,7 @@ void Game::CargarNivel(int num) {
         auto obsA = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(7.0f, 10.0f), 4.0f, 0.4f, false, texturaPlataforma);
         auto obsB = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(19.0f, 10.0f), 4.0f, 0.4f, false, texturaPlataforma);
 
-        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(13, 10), 2, 20, false, texturaPlataforma));
+        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(13, 10), 2, 20, true, texturaPlataforma));
         obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(19.0f, 5.0f), 2.0f, 2.0f, false, texturaCaja));
         obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(19.0f, 15.0f), 2.0f, 2.0f, false, texturaCaja));
 
@@ -587,11 +595,107 @@ void Game::CargarNivel(int num) {
         
        
     }
-    else if (num == 3) {
-        // Nivel Difícil: Muchos obstáculos y plataformas pequeñas
-        for (int i = 0; i < 5; i++)
-            obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(10 + i * 3, 5), 0.5, 2, true, texturaCaja));
-    }
+   else if (num == 3) {
+    LimpiarMundo();
+
+    // --- 1. ANCLAJES (EJES FIJOS) ---
+    b2BodyDef anchorW1Def; anchorW1Def.position.Set(8.0f, 15.0f);
+    b2Body* ejeRueda1 = physicsWorld->CreateBody(&anchorW1Def);
+
+    b2BodyDef anchorW2Def; anchorW2Def.position.Set(8.0f, 5.0f);
+    b2Body* ejeRueda2 = physicsWorld->CreateBody(&anchorW2Def);
+
+    // Anclaje para el Riel X (Sincronizado con la plataforma en 21, 10)
+    b2BodyDef anchorRXDef; anchorRXDef.position.Set(21.0f, 10.0f); 
+    b2Body* ejeRielX = physicsWorld->CreateBody(&anchorRXDef);
+
+    // --- 2. CONTROLADORES (RUEDAS Y BLOQUES) ---
+    auto rueda1 = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(8.0f, 15.0f), 4.0f, 4.0f, false, texturaPlataforma);
+    auto bloque1 = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(5.5f, 15.0f), 3.0f, 0.8f, false, texturaCaja);
+
+    auto rueda2 = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(8.0f, 5.0f), 4.0f, 4.0f, false, texturaPlataforma);
+    auto bloque2 = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(5.5f, 5.0f), 3.0f, 0.8f, false, texturaCaja);
+
+    rueda1->body->SetGravityScale(0.0f); bloque1->body->SetGravityScale(0.0f);
+    rueda2->body->SetGravityScale(0.0f); bloque2->body->SetGravityScale(0.0f);
+
+    // Soldaduras
+    b2WeldJointDef w1; w1.Initialize(rueda1->body, bloque1->body, rueda1->body->GetWorldCenter());
+    physicsWorld->CreateJoint(&w1);
+    b2WeldJointDef w2; w2.Initialize(rueda2->body, bloque2->body, rueda2->body->GetWorldCenter());
+    physicsWorld->CreateJoint(&w2);
+
+    // Bisagras de las ruedas
+    b2RevoluteJointDef r1; r1.Initialize(ejeRueda1, rueda1->body, ejeRueda1->GetWorldCenter());
+    b2RevoluteJoint* jRuedaX = (b2RevoluteJoint*)physicsWorld->CreateJoint(&r1);
+
+    b2RevoluteJointDef r2; r2.Initialize(ejeRueda2, rueda2->body, ejeRueda2->GetWorldCenter());
+    b2RevoluteJoint* jRuedaY = (b2RevoluteJoint*)physicsWorld->CreateJoint(&r2);
+
+
+    // --- 3. EL SISTEMA DE PLATAFORMA (X e Y) ---
+
+    // EL CARRO INTERMEDIO (Le agregamos una forma para que tenga MASA)
+    b2BodyDef carroDef;
+    carroDef.type = b2_dynamicBody;
+    carroDef.position.Set(21.0f, 10.0f);
+    b2Body* carroIntermedio = physicsWorld->CreateBody(&carroDef);
+    carroIntermedio->SetGravityScale(0.0f);
+
+    // IMPORTANTE: Darle masa al carro con una forma pequeña e invisible
+    b2PolygonShape carroShape;
+    carroShape.SetAsBox(0.1f, 0.1f); 
+    b2FixtureDef carroFix;
+    carroFix.shape = &carroShape;
+    carroFix.density = 1.0f;
+    carroFix.isSensor = true; // Sensor para que no choque con nada
+    carroIntermedio->CreateFixture(&carroFix);
+
+    // La Plataforma Real
+    auto platFinal = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(21.0f, 10.0f), 2.0f, 2.0f, false, texturaPlataforma);
+    platFinal->body->SetGravityScale(0.0f);
+
+    // Riel Horizontal (X)
+    b2PrismaticJointDef pX;
+    pX.Initialize(ejeRielX, carroIntermedio, carroIntermedio->GetWorldCenter(), b2Vec2(1, 0));
+    pX.lowerTranslation = -6.0f; pX.upperTranslation = 6.0f; pX.enableLimit = true;
+    b2PrismaticJoint* jPrismX = (b2PrismaticJoint*)physicsWorld->CreateJoint(&pX);
+
+    // Riel Vertical (Y)
+    b2PrismaticJointDef pY;
+    pY.Initialize(carroIntermedio, platFinal->body, platFinal->body->GetWorldCenter(), b2Vec2(0, 1));
+    pY.lowerTranslation = -4.0f; pY.upperTranslation = 4.0f; pY.enableLimit = true;
+    b2PrismaticJoint* jPrismY = (b2PrismaticJoint*)physicsWorld->CreateJoint(&pY);
+
+
+    // --- 4. TRANSMISIÓN (GEAR JOINTS) ---
+
+    // Rueda de abajo (Rueda 1) controla X
+    b2GearJointDef gX;
+    gX.bodyA = rueda1->body; gX.bodyB = carroIntermedio;
+    gX.joint1 = jRuedaX; gX.joint2 = jPrismX;
+    gX.ratio = 2.0f; // Aumentamos ratio para que se note más el movimiento
+    physicsWorld->CreateJoint(&gX);
+
+    // Rueda de arriba (Rueda 2) controla Y
+    b2GearJointDef gY;
+    gY.bodyA = rueda2->body; gY.bodyB = platFinal->body;
+    gY.joint1 = jRuedaY; gY.joint2 = jPrismY;
+    gY.ratio = 2.0f;
+    physicsWorld->CreateJoint(&gY);
+
+
+    // --- 5. OBJETIVOS Y PARED ---
+    obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(14, 10), 2, 20, true, texturaPlataforma));
+    obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(19.0f, 15.0f), 2.0f, 2.0f, false, texturaCaja));
+    obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(23.0f, 5.0f), 2.0f, 2.0f, false, texturaCaja));
+
+    obstaculos.push_back(std::move(rueda1));
+    obstaculos.push_back(std::move(bloque1));
+    obstaculos.push_back(std::move(rueda2));
+    obstaculos.push_back(std::move(bloque2));
+    obstaculos.push_back(std::move(platFinal));
+}
 }
 
 void Game::LimpiarMundo() {
@@ -603,7 +707,7 @@ void Game::LimpiarMundo() {
         physicsWorld->DestroyBody(rag->brazoDer);
         physicsWorld->DestroyBody(rag->piernaIzq);
         physicsWorld->DestroyBody(rag->piernaDer);
-        if (rag->escudo) physicsWorld->DestroyBody(rag->escudo);
+     
     }
     ragdolls.clear();
 

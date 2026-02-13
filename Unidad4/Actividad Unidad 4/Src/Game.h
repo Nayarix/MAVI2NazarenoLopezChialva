@@ -23,6 +23,7 @@ public:
     b2Joint* caderaIzq;
     b2Joint* caderaDer;
 
+    float tiempoVida = 0.0f;
     Ragdoll(b2World* world, const b2Vec2& position);
     void ApplyImpulse(const b2Vec2& impulse);
 };
