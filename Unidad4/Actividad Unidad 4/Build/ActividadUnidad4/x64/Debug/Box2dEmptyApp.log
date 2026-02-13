@@ -1,9 +1,8 @@
-﻿  Box2dEmptyApp.cpp
-  Game.cpp
+﻿  Game.cpp
 C:\Users\Nazareno\Documents\GitHubClones\MAVI2NazarenoLopezChialva\Unidad4\Actividad Unidad 4\Src\Game.cpp(32,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Nazareno\Documents\GitHubClones\MAVI2NazarenoLopezChialva\Unidad4\Actividad Unidad 4\Src\Game.cpp(32,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Nazareno\Documents\GitHubClones\MAVI2NazarenoLopezChialva\Unidad4\Actividad Unidad 4\Src\Game.cpp(249,20): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Nazareno\Documents\GitHubClones\MAVI2NazarenoLopezChialva\Unidad4\Actividad Unidad 4\Src\Game.cpp(522,86): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Nazareno\Documents\GitHubClones\MAVI2NazarenoLopezChialva\Unidad4\Actividad Unidad 4\Src\Game.cpp(593,86): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
 C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         with
 C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         [
@@ -12,7 +11,7 @@ C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.44.35207\
   (compilando archivo de origen "../Src/Game.cpp")
       C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56):
       el contexto de creación de instancias de la plantilla (el más antiguo primero) es
-          C:\Users\Nazareno\Documents\GitHubClones\MAVI2NazarenoLopezChialva\Unidad4\Actividad Unidad 4\Src\Game.cpp(522,39):
+          C:\Users\Nazareno\Documents\GitHubClones\MAVI2NazarenoLopezChialva\Unidad4\Actividad Unidad 4\Src\Game.cpp(539,31):
           Vea la referencia a la creación de una instancia de la función plantilla "std::unique_ptr<Obstaculo,std::default_delete<Obstaculo>> std::make_unique<Obstaculo,b2World*&,b2Vec2,double,int,bool,sf::Texture&,0>(b2World *&,b2Vec2 &&,double &&,int &&,bool &&,sf::Texture &)" que se está compilando
   
 C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
@@ -22,5 +21,4 @@ C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.44.35207\
 C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         ]
   (compilando archivo de origen "../Src/Game.cpp")
   
-  Generando código...
   Box2dEmptyApp.vcxproj -> C:\Users\Nazareno\Documents\GitHubClones\MAVI2NazarenoLopezChialva\Unidad4\Actividad Unidad 4\Bin\Debug\ActividadUnidad4.exe

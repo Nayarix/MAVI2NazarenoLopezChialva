@@ -40,23 +40,23 @@ Game::Game(int width, int height, const std::string& title) {
 
 Ragdoll::Ragdoll(b2World* world, const b2Vec2& position) {
     
-    cabeza = Box2DHelper::CreateCircularDynamicBody(world, 0.5f, 0.8f, 0.2f, 0.1f);
-    cabeza->SetTransform(position + b2Vec2(0.0f, -1.0f), 0.0f);
+    cabeza = Box2DHelper::CreateCircularDynamicBody(world, 0.3f, 0.8f, 0.2f, 0.1f);
+    cabeza->SetTransform(position + b2Vec2(0.0f, -0.7f), 0.0f);
 
-    torso = Box2DHelper::CreateRectangularDynamicBody(world, 1.0f, 1.7f, 2.0f, 0.2f, 0.1f);
+    torso = Box2DHelper::CreateRectangularDynamicBody(world, 0.5f, 0.8f, 5.0f, 0.2f, 0.1f);
     torso->SetTransform(position, 0.0f);
 
-    brazoIzq = Box2DHelper::CreateRectangularDynamicBody(world, 1.3f, 0.4f, 0.6f, 0.2f, 0.1f);
-    brazoIzq->SetTransform(position + b2Vec2(-1.2f, 0.0f), 0.0f);
+    brazoIzq = Box2DHelper::CreateRectangularDynamicBody(world, 0.6f, 0.2f, 0.6f, 0.2f, 0.1f);
+    brazoIzq->SetTransform(position + b2Vec2(-0.55f, 0.0f), 0.0f);
 
-    brazoDer = Box2DHelper::CreateRectangularDynamicBody(world, 1.3f, 0.4f, 0.6f, 0.2f, 0.1f);
-    brazoDer->SetTransform(position + b2Vec2(1.2f, 0.0f), 0.0f);
+    brazoDer = Box2DHelper::CreateRectangularDynamicBody(world, 0.6f, 0.2f, 0.6f, 0.2f, 0.1f);
+    brazoDer->SetTransform(position + b2Vec2(0.55f, 0.0f), 0.0f);
 
-    piernaIzq = Box2DHelper::CreateRectangularDynamicBody(world, 0.4f, 1.3f, 1.0f, 0.2f, 0.1f);
-    piernaIzq->SetTransform(position + b2Vec2(-0.3f, 1.7f), 0.0f);
+    piernaIzq = Box2DHelper::CreateRectangularDynamicBody(world, 0.2f, 0.6f, 1.0f, 0.2f, 0.1f);
+    piernaIzq->SetTransform(position + b2Vec2(-0.2f, 0.7f), 0.0f);
 
-    piernaDer = Box2DHelper::CreateRectangularDynamicBody(world, 0.4f, 1.3f, 1.0f, 0.2f, 0.1f);
-    piernaDer->SetTransform(position + b2Vec2(0.3f, 1.7f), 0.0f);
+    piernaDer = Box2DHelper::CreateRectangularDynamicBody(world, 0.2f, 0.6f, 1.0f, 0.2f, 0.1f);
+    piernaDer->SetTransform(position + b2Vec2(0.2f, 0.7f), 0.0f);
 
     
     auto CreateFlexibleJoint = [world](b2Body* bodyA, b2Body* bodyB, const b2Vec2& anchorA, const b2Vec2& anchorB, float stiffness, float damping) {
@@ -93,12 +93,12 @@ Ragdoll::Ragdoll(b2World* world, const b2Vec2& position) {
 
 
 
-    cuello = CreateFlexibleJoint(torso, cabeza, b2Vec2(0.0f, -0.85f), b2Vec2(0.0f, 0.5f), 0.1f, 0.0f);
-    hombroIzq = CreateFlexibleJoint(torso, brazoIzq, b2Vec2(-0.5f, 0.0f), b2Vec2(0.6f, 0.0f), 2.0f, 0.2f);
-    hombroDer = CreateFlexibleJoint(torso, brazoDer, b2Vec2(0.5f, 0.0f), b2Vec2(-0.6f, 0.0f), 2.0f, 0.2f);
+    cuello = CreateFlexibleJoint(torso, cabeza, b2Vec2(0.0f, -0.4f), b2Vec2(0.0f, 0.3f), 0.1f, 0.0f);
+    hombroIzq = CreateFlexibleJoint(torso, brazoIzq, b2Vec2(-0.25f, 0.0f), b2Vec2(0.3f, 0.0f), 2.0f, 0.2f);
+    hombroDer = CreateFlexibleJoint(torso, brazoDer, b2Vec2(0.25f, 0.0f), b2Vec2(-0.3f, 0.0f), 2.0f, 0.2f);
     // Usamos la bisagra. El vector es la posición RELATIVA en el Torso donde va la pierna.
-    caderaIzq = CreateHingeJoint(torso, piernaIzq, b2Vec2(-0.4f, 0.9f));
-    caderaDer = CreateHingeJoint(torso, piernaDer, b2Vec2(0.4f, 0.9f));
+    caderaIzq = CreateHingeJoint(torso, piernaIzq, b2Vec2(-0.1f, 0.4f));
+    caderaDer = CreateHingeJoint(torso, piernaDer, b2Vec2(0.1f, 0.4f));
 
 
     // --- CREACIÓN DEL ESCUDO ---
@@ -106,7 +106,7 @@ Ragdoll::Ragdoll(b2World* world, const b2Vec2& position) {
 // 1. Crear el cuerpo físico del escudo
 // Mide 0.2m de ancho x 0.8m de alto (Un rectángulo alto)
 // Densidad 5.0f (Muy pesado, para que parezca metal y proteja)
-    escudo = Box2DHelper::CreateRectangularDynamicBody(world, 1.2f, 0.8f, 1.0f, 0.5f, 0.1f);
+    escudo = Box2DHelper::CreateRectangularDynamicBody(world, 0.2f, 0.2f, 1.0f, 0.5f, 0.1f);
 
     // 2. Posicionarlo inicialmente
     // Lo ponemos justo donde está el brazo izquierdo para que no "salte" al crearse
@@ -120,12 +120,12 @@ Ragdoll::Ragdoll(b2World* world, const b2Vec2& position) {
     // Anchor (0.0f, 0.5f):
     // X=0.0 (Centro del brazo a lo ancho)
     // Y=0.5 (En el borde inferior del brazo, hacia la mano)
-    CreateHardWeld(brazoIzq, escudo, b2Vec2(0.0f, 0.5f));
+    CreateHardWeld(brazoIzq, escudo, b2Vec2(0.0f, 0.1f));
 }
 
 void Ragdoll::ApplyImpulse(const b2Vec2& impulse) {
     //cabeza->ApplyLinearImpulse(impulse, cabeza->GetWorldCenter(), true);
-    b2Vec2 impulsePotente(impulse.x * 5.0f, impulse.y * 5.0f);
+    b2Vec2 impulsePotente(impulse.x * 1.5f, impulse.y * 1.5f);
     torso->ApplyLinearImpulse(impulsePotente, torso->GetWorldCenter(), true);
     //brazoIzq->ApplyLinearImpulse(impulse, brazoIzq->GetWorldCenter(), true);
     //brazoDer->ApplyLinearImpulse(impulse, brazoDer->GetWorldCenter(), true);
@@ -147,7 +147,7 @@ Obstaculo::Obstaculo(b2World* world, const b2Vec2& position, float width, float 
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &shape;
-    fixtureDef.density = estatico ? 0.0f : 1.0f;
+    fixtureDef.density = estatico ? 0.0f : 0.66f;
     fixtureDef.friction = 0.4f;
     fixtureDef.restitution = 0.2f;
 
@@ -470,14 +470,77 @@ void Game::CargarNivel(int num) {
 
     if (num == 1) {
         // Objetos Estáticos (Gris en el original)
-        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(10.0f, 5.0f), 3.0f, 0.5f, true, texturaPlataforma));
-        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(20.0f, 8.0f), 0.5f, 3.0f, true, texturaPlataforma));
-        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(15.0f, 10.0f), 0.5f, 3.0f, true, texturaPlataforma));
+  LimpiarMundo(); // Limpiamos nivel anterior
 
-        // Objetos Dinámicos (Naranja en el original)
-        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(15.0f, 5.0f), 1.0f, 1.0f, false, texturaCaja));
-        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(18.0f, 5.0f), 1.0f, 1.0f, false, texturaCaja));
-        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(12.0f, 3.0f), 1.5f, 0.5f, false, texturaCaja));
+    // 1. EL EJE (Cuerpo estático invisible que sostiene todo)
+    b2BodyDef anchorDef;
+    anchorDef.position.Set(10.0f, 13.0f); // Centro de la rueda en el mundo
+    b2Body* ejeInmóvil = physicsWorld->CreateBody(&anchorDef);
+
+	b2BodyDef anchorDef2;
+	anchorDef2.position.Set(17.0f, 10.0f); // Posición de la rueda 2 fija
+	b2Body* ejeInmóvil2 = physicsWorld->CreateBody(&anchorDef2);
+
+
+    // 2. LA RUEDA (Círculo dinámico)
+    // Creamos un obstáculo circular (ajusta el tamaño si es necesario)
+    auto rueda = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(10.0f, 13.0f), 4.0f, 4.0f, false, texturaPlataforma);
+
+	auto rueda2 = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(17.0f, 10.0f), 4.0f, 4.0f, false, texturaPlataforma);
+    
+    // 3. EL BLOQUE SOBRESALIENTE (Rectángulo dinámico)
+    // Lo posicionamos un poco a la derecha del centro de la rueda
+    auto bloque = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(7.0f, 13.0f), 3.0f, 0.8f, false, texturaCaja);
+
+	auto bloque2 = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(14.0f, 10.0f), 3.0f, 0.8f, false, texturaCaja);
+
+    // --- CONFIGURACIÓN FÍSICA ---
+
+    // Quitamos la gravedad para que no gire por su propio peso
+    rueda->body->SetGravityScale(0.0f);
+    bloque->body->SetGravityScale(0.0f);
+
+	rueda2->body->SetGravityScale(0.0f);
+	bloque2->body->SetGravityScale(0.0f);
+
+    // 4. SOLDAR EL BLOQUE A LA RUEDA (Weld Joint)
+    // Esto hace que se muevan como una sola pieza
+    b2WeldJointDef weldDef;
+    weldDef.Initialize(rueda->body, bloque->body, rueda->body->GetWorldCenter());
+    physicsWorld->CreateJoint(&weldDef);
+
+	b2WeldJointDef weldDef2;
+	weldDef2.Initialize(rueda2->body, bloque2->body, rueda2->body->GetWorldCenter());
+	physicsWorld->CreateJoint(&weldDef2);
+
+    // 5. UNIR LA RUEDA AL EJE (Revolute Joint)
+    // Esto permite que rote sobre el punto fijo
+    b2RevoluteJointDef revDef;
+    revDef.Initialize(ejeInmóvil, rueda->body, ejeInmóvil->GetWorldCenter());
+
+	b2RevoluteJointDef revDef2;
+	revDef2.Initialize(ejeInmóvil2, rueda2->body, ejeInmóvil2->GetWorldCenter());
+    
+    // Opcional: Si quieres que tenga un poco de resistencia al giro (fricción)
+    // revDef.enableMotor = true;
+    // revDef.maxMotorTorque = 5.0f;
+    // revDef.motorSpeed = 0.0f; 
+
+    physicsWorld->CreateJoint(&revDef);
+    physicsWorld->CreateJoint(&revDef2);
+
+    // 6. GUARDAR PARA RENDERIZAR
+    obstaculos.push_back(std::move(rueda));
+    obstaculos.push_back(std::move(bloque));
+
+	obstaculos.push_back(std::move(rueda2));
+	obstaculos.push_back(std::move(bloque2));
+
+    obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(13.5, 3), 1.5, 6, true, texturaPlataforma));
+
+    obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(20, 6), 2, 2, false, texturaCaja));
+
+
     }
     else if (num == 2) {
         // 1. Cuerpo de anclaje
@@ -486,8 +549,13 @@ void Game::CargarNivel(int num) {
         b2Body* sueloFijo = physicsWorld->CreateBody(&anchorDef);
 
         // 2. Plataformas (Dinámicas, con poca densidad para que el Ragdoll las mueva)
-        auto obsA = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(8.0f, 10.0f), 4.0f, 0.4f, false, texturaCaja);
-        auto obsB = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(18.0f, 10.0f), 4.0f, 0.4f, false, texturaCaja);
+        auto obsA = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(7.0f, 10.0f), 4.0f, 0.4f, false, texturaPlataforma);
+        auto obsB = std::make_unique<Obstaculo>(physicsWorld, b2Vec2(19.0f, 10.0f), 4.0f, 0.4f, false, texturaPlataforma);
+
+        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(13, 10), 2, 20, false, texturaPlataforma));
+        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(19.0f, 5.0f), 2.0f, 2.0f, false, texturaCaja));
+        obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(19.0f, 15.0f), 2.0f, 2.0f, false, texturaCaja));
+
 
         // 3. Rieles Verticales (Prismatic Joints)
         b2PrismaticJointDef pDefA;
@@ -499,8 +567,8 @@ void Game::CargarNivel(int num) {
 
         b2PrismaticJointDef pDefB;
         pDefB.Initialize(sueloFijo, obsB->body, obsB->body->GetWorldCenter(), b2Vec2(0, 1));
-        pDefB.lowerTranslation = -4.0f;
-        pDefB.upperTranslation = 4.0f;
+        pDefB.lowerTranslation = -5.0f;
+        pDefB.upperTranslation = 5.0f;
         pDefB.enableLimit = true;
         b2PrismaticJoint* jointDerecho = (b2PrismaticJoint*)physicsWorld->CreateJoint(&pDefB);
 
@@ -515,6 +583,9 @@ void Game::CargarNivel(int num) {
 
         obstaculos.push_back(std::move(obsA));
         obstaculos.push_back(std::move(obsB));
+
+        
+       
     }
     else if (num == 3) {
         // Nivel Difícil: Muchos obstáculos y plataformas pequeñas
