@@ -43,7 +43,8 @@ enum class GameState {
     MAIN_MENU,
     LEVEL_SELECT,
     RAGDOLL_GUIDE,
-    PLAYING
+    PLAYING,
+	LEVEL_WON
 };
 
 
@@ -56,7 +57,10 @@ private:
 
     sf::Texture texturaCaja;
     sf::Texture texturaPlataforma;
-    
+	sf::Texture texturaMetal;
+    sf::Texture texturaMetalPlat;
+	sf::Texture texturaMetalRueda;
+
     sf::RectangleShape cannonBase;
     sf::RectangleShape cannonBarrel;
 
@@ -71,6 +75,7 @@ private:
     const float MAX_CANNON_POWER = 30.0f;
     const float MIN_CANNON_POWER = 5.0f;
     const float MAX_DISTANCE = 300.0f;
+	float timerVictoria = 0.0f;
 
     GameState estadoActual;
     int nivelSeleccionado; // 1, 2 o 3
@@ -89,7 +94,7 @@ private:
     Boton btnLvl1, btnLvl2, btnLvl3, btnVolver;
     // Botón durante el juego
     Boton btnMenuPrincipal;
-
+	Boton btnVolverMenu;
 
     void InicializarBotones();
     void CargarNivel(int num);
