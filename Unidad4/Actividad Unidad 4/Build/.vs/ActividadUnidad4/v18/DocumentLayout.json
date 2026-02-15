@@ -12,13 +12,13 @@
       "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{96C674D7-9E95-4F51-966C-1A0545981942}|Box2dEmptyApp.vcxproj|C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
               "RelativeDocumentMoniker": "..\\Src\\Game.cpp",
               "ToolTip": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.cpp",
               "RelativeToolTip": "..\\Src\\Game.cpp",
-              "ViewState": "AgIAAIcBAAAAAAAAAAAiwJQBAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-02-08T18:48:48.484Z",
               "EditorCaption": ""
@@ -51,7 +51,7 @@
               "RelativeDocumentMoniker": "..\\Src\\Game.h",
               "ToolTip": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.h",
               "RelativeToolTip": "..\\Src\\Game.h",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACQAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAqwI4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-02-08T18:48:48.577Z",
               "EditorCaption": ""
@@ -64,21 +64,23 @@
               "RelativeDocumentMoniker": "..\\Src\\SFMLRenderer.cpp",
               "ToolTip": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.cpp",
               "RelativeToolTip": "..\\Src\\SFMLRenderer.cpp",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAqwC8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-08T18:48:48.405Z"
+              "WhenOpened": "2026-02-08T18:48:48.405Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Box2dEmptyApp.cpp",
               "DocumentMoniker": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp",
               "RelativeDocumentMoniker": "..\\Src\\Box2dEmptyApp.cpp",
               "ToolTip": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2dEmptyApp.cpp",
               "RelativeToolTip": "..\\Src\\Box2dEmptyApp.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-08T18:48:48.562Z"
+              "WhenOpened": "2026-02-08T18:48:48.562Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -88,21 +90,23 @@
               "RelativeDocumentMoniker": "..\\Src\\SFMLRenderer.h",
               "ToolTip": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\SFMLRenderer.h",
               "RelativeToolTip": "..\\Src\\SFMLRenderer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAqwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-08T18:48:48.577Z"
+              "WhenOpened": "2026-02-08T18:48:48.577Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Box2DHelper.h",
               "DocumentMoniker": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h",
               "RelativeDocumentMoniker": "..\\Src\\Box2DHelper.h",
               "ToolTip": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Box2DHelper.h",
               "RelativeToolTip": "..\\Src\\Box2DHelper.h",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAqwIIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-08T18:48:48.577Z"
+              "WhenOpened": "2026-02-08T18:48:48.577Z",
+              "EditorCaption": ""
             }
           ]
         }
