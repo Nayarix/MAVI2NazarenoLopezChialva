@@ -34,6 +34,7 @@ public:
     sf::Color color;
     bool esEstatico;
     sf::Sprite spriteVisual;
+    b2Vec2 posicionInicial;
 
     Obstaculo(b2World* world, const b2Vec2& position, float width, float height, bool estatico, sf::Texture& textura);
     void Draw(sf::RenderWindow* window) const;
@@ -60,6 +61,8 @@ private:
 	sf::Texture texturaMetal;
     sf::Texture texturaMetalPlat;
 	sf::Texture texturaMetalRueda;
+    sf::Texture texturaFondo;
+    sf::Texture texturaCañon;
 
     sf::RectangleShape cannonBase;
     sf::RectangleShape cannonBarrel;

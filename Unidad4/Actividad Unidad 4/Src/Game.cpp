@@ -11,15 +11,8 @@ Game::Game(int width, int height, const std::string & title) {
 	physicsWorld->SetDebugDraw(debugRenderer);
 
 
-	cannonBase.setSize(sf::Vector2f(30.0f, 30.0f));
-	cannonBase.setOrigin(15.0f, 15.0f);
-	cannonBase.setPosition(30.0f, height - 30.0f);
-	cannonBase.setFillColor(sf::Color(150, 150, 150));
 
-	cannonBarrel.setSize(sf::Vector2f(CANNON_LENGTH, 10.0f));
-	cannonBarrel.setOrigin(0.0f, 5.0f);
-	cannonBarrel.setPosition(30.0f, height - 30.0f);
-	cannonBarrel.setFillColor(sf::Color(200, 50, 50));
+	
 
 	if (!texturaCaja.loadFromFile("TexturaCaja.png")) {
 		// Manejo de error (opcional: pintar un cuadrado rojo si falla)
@@ -39,6 +32,26 @@ Game::Game(int width, int height, const std::string & title) {
 	if (!texturaPlataforma.loadFromFile("plataforma.png")) {
 		// Manejo de error (opcional: pintar un cuadrado azul si falla)
 	}
+
+	if (!texturaFondo.loadFromFile("ImagenFondo.png")) {
+		// Manejo de error (opcional: pintar un cuadrado azul si falla)
+	}
+
+	if (!texturaCañon.loadFromFile("ImagenCañon2.png")) {
+		// Manejo de error (opcional: pintar un cuadrado azul si falla)
+	}
+
+	cannonBase.setSize(sf::Vector2f(30.0f, 30.0f));
+	cannonBase.setOrigin(15.0f, 15.0f);
+	cannonBase.setPosition(30.0f, height - 30.0f);
+	cannonBase.setFillColor(sf::Color(150, 150, 150));
+
+	cannonBarrel.setSize(sf::Vector2f(CANNON_LENGTH, 50.0f));
+	cannonBarrel.setOrigin(0.0f, 5.0f);
+	cannonBarrel.setPosition(30.0f, height - 30.0f);
+	cannonBarrel.setTexture(&texturaCañon);
+
+
 
 	CreateBoundaries(width, height);
 	CreateObstacles();
@@ -124,8 +137,9 @@ void Ragdoll::ApplyImpulse(const b2Vec2& impulse) {
 }
 
 Obstaculo::Obstaculo(b2World* world, const b2Vec2& position, float width, float height, bool estatico, sf::Texture& textura)
-	:esEstatico(estatico) {
+	: esEstatico(estatico) {
 
+	posicionInicial = position;
 
 	b2BodyDef bodyDef;
 	bodyDef.type = estatico ? b2_staticBody : b2_dynamicBody;
@@ -306,7 +320,20 @@ void Game::HandleEvents() {
 	while (window->pollEvent(event)) {
 		if (event.type == sf::Event::Closed) window->close();
 
+/*		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
+			if (estadoActual == GameState::PLAYING) {
+				estadoActual = GameState::LEVEL_WON;
+			}
+		}*/
+
 		if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+
+			if (estadoActual == GameState::LEVEL_WON) {
+				if (EsClicEnBoton(btnVolverMenu, mousePos)) {
+					estadoActual = GameState::MAIN_MENU;
+					LimpiarMundo(); 
+				}
+			}
 
 			if (estadoActual == GameState::MAIN_MENU) {
 				if (EsClicEnBoton(btnNiveles, mousePos)) estadoActual = GameState::LEVEL_SELECT;
@@ -335,38 +362,76 @@ void Game::HandleEvents() {
 }
 
 void Game::Update(float deltaTime) {
-	physicsWorld->Step(deltaTime, 8, 3);
-	UpdateCannonRotation();
+	if (estadoActual == GameState::PLAYING) {
+		physicsWorld->Step(deltaTime, 8, 3);
+		UpdateCannonRotation();
 
-
-	// LÓGICA DE DESAPARICIÓN (5 segundos)
-	for (auto it = ragdolls.begin(); it != ragdolls.end(); ) {
-		// 1. Sumar el tiempo transcurrido al ragdoll
-		(*it)->tiempoVida += deltaTime;
-
-		// 2. Si superó los 5 segundos, lo eliminamos
-		if ((*it)->tiempoVida >= 5.0f) {
-			// ¡VITAL! Antes de borrar el objeto de C++, hay que destruir los cuerpos en Box2D
-			physicsWorld->DestroyBody((*it)->cabeza);
-			physicsWorld->DestroyBody((*it)->torso);
-			physicsWorld->DestroyBody((*it)->brazoIzq);
-			physicsWorld->DestroyBody((*it)->brazoDer);
-			physicsWorld->DestroyBody((*it)->piernaIzq);
-			physicsWorld->DestroyBody((*it)->piernaDer);
-
-
-			// Borrar del vector y obtener el siguiente iterador válido
-			it = ragdolls.erase(it);
+		// 1. Lógica de desaparición de Ragdolls (Se mantiene igual)
+		for (auto it = ragdolls.begin(); it != ragdolls.end(); ) {
+			(*it)->tiempoVida += deltaTime;
+			if ((*it)->tiempoVida >= 5.0f) {
+				physicsWorld->DestroyBody((*it)->cabeza);
+				physicsWorld->DestroyBody((*it)->torso);
+				physicsWorld->DestroyBody((*it)->brazoIzq);
+				physicsWorld->DestroyBody((*it)->brazoDer);
+				physicsWorld->DestroyBody((*it)->piernaIzq);
+				physicsWorld->DestroyBody((*it)->piernaDer);
+				it = ragdolls.erase(it);
+			}
+			else { ++it; }
 		}
-		else {
-			++it; // Avanzar al siguiente si no expiró
+
+		// 2. NUEVA LÓGICA DE VICTORIA: Desplazamiento
+		bool todasMovidas = true;
+		int contadorObjetivos = 0;
+
+		for (auto it = obstaculos.begin(); it != obstaculos.end(); ) {
+			b2Body* b = (*it)->body;
+
+			// Si la caja se cae de la pantalla, cuenta como "movida" y la borramos
+			if (!(*it)->esEstatico && b->GetPosition().y > 22.0f) {
+				physicsWorld->DestroyBody(b);
+				it = obstaculos.erase(it);
+				continue;
+			}
+
+			// Verificamos solo cajas dinámicas sin joints (los objetivos)
+			if (!(*it)->esEstatico && b->GetJointList() == nullptr) {
+				contadorObjetivos++;
+
+				// Calculamos la distancia entre posición actual e inicial
+				float distanciaRecorrida = (b->GetPosition() - (*it)->posicionInicial).Length();
+
+				// Si la caja se movió menos de 0.5 metros, consideramos que NO se movió
+				if (distanciaRecorrida < 0.5f) {
+					todasMovidas = false;
+				}
+			}
+			++it;
+		}
+
+		// Solo ganamos si hay cajas en el nivel y TODAS se desplazaron
+		if (contadorObjetivos > 0 && todasMovidas) {
+			estadoActual = GameState::LEVEL_WON;
 		}
 	}
 }
 
 void Game::Render() {
-	window->clear(sf::Color(20, 20, 20)); // Fondo oscuro
 
+	window->clear(sf::Color(20, 20, 20));
+
+	// 2. DIBUJAR EL FONDO (Primero que nada para que esté atrás)
+	sf::Sprite spriteFondo;
+	spriteFondo.setTexture(texturaFondo);
+
+	// Escalamos el fondo para que ocupe toda la ventana 
+	sf::Vector2u size = texturaFondo.getSize();
+	spriteFondo.setScale(
+		static_cast<float>(window->getSize().x) / size.x,
+		static_cast<float>(window->getSize().y) / size.y
+	);
+	window->draw(spriteFondo);
 
 
 	if (estadoActual == GameState::MAIN_MENU) {
@@ -409,18 +474,44 @@ void Game::Render() {
 
 		// 2. DIBUJAR RAGDOLLS COMPLETOS
 		for (auto& rag : ragdolls) {
-			DrawBody(rag->cabeza, sf::Color::Green);
-			DrawBody(rag->torso, sf::Color::Blue);
-			DrawBody(rag->brazoIzq, sf::Color::Red);
-			DrawBody(rag->brazoDer, sf::Color::Red);
-			DrawBody(rag->piernaIzq, sf::Color::Yellow);
-			DrawBody(rag->piernaDer, sf::Color::Yellow);
+			DrawBody(rag->cabeza, sf::Color(128, 128, 128));
+			DrawBody(rag->torso, sf::Color(128, 128, 128));
+			DrawBody(rag->brazoIzq, sf::Color(128, 128, 128));
+			DrawBody(rag->brazoDer, sf::Color(128, 128, 128));
+			DrawBody(rag->piernaIzq, sf::Color(128, 128, 128));
+			DrawBody(rag->piernaDer, sf::Color(128, 128, 128));
 
 		}
 
 		// 3. Dibujar la interfaz del juego (Botón menú y contador si lo tienes)
 		window->draw(btnMenuPrincipal.forma);
 		window->draw(btnMenuPrincipal.texto);
+	}
+
+	else if (estadoActual == GameState::LEVEL_WON) {
+		// --- PANTALLA DE VICTORIA ---
+
+		// Capa oscura para que el texto se lea mejor
+		sf::RectangleShape overlay(sf::Vector2f(window->getSize().x, window->getSize().y));
+		overlay.setFillColor(sf::Color(0, 0, 0, 180)); // Negro con transparencia
+		window->draw(overlay);
+
+		// Texto de victoria
+		sf::Text textoWin;
+		textoWin.setFont(fuente);
+		textoWin.setString("SUPERASTE EL NIVEL");
+		textoWin.setCharacterSize(50);
+		textoWin.setFillColor(sf::Color::Yellow);
+
+		// Centrar el texto
+		sf::FloatRect textBounds = textoWin.getLocalBounds();
+		textoWin.setOrigin(textBounds.left + textBounds.width / 2.0f, textBounds.top + textBounds.height / 2.0f);
+		textoWin.setPosition(window->getSize().x / 2.0f, window->getSize().y / 2.5f);
+		window->draw(textoWin);
+
+		// Botón para volver al menú
+		window->draw(btnVolverMenu.forma);
+		window->draw(btnVolverMenu.texto);
 	}
 
 	window->display();
@@ -723,7 +814,7 @@ void Game::CargarNivel(int num) {
 		physicsWorld->CreateJoint(&gY);
 
 		// --- 5. OBJETIVOS Y RENDER ---
-		obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(13, 10), 2, 16, true, texturaMetalPlat));
+		obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(13, 10), 1, 16, true, texturaMetalPlat));
 		obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(19.0f, 15.0f), 2.0f, 2.0f, false, texturaCaja));
 		obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(23.0f, 5.0f), 2.0f, 2.0f, false, texturaCaja));
 
