@@ -38,7 +38,7 @@
               "RelativeDocumentMoniker": "..\\Src\\Game.cpp",
               "ToolTip": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.cpp",
               "RelativeToolTip": "..\\Src\\Game.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-02-08T18:48:48.484Z",
               "EditorCaption": ""
@@ -51,7 +51,7 @@
               "RelativeDocumentMoniker": "..\\Src\\Game.h",
               "ToolTip": "C:\\Users\\Nazareno\\Documents\\GitHubClones\\MAVI2NazarenoLopezChialva\\Unidad4\\Actividad Unidad 4\\Src\\Game.h",
               "RelativeToolTip": "..\\Src\\Game.h",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAqwI4AAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-02-08T18:48:48.577Z",
               "EditorCaption": ""
@@ -66,8 +66,7 @@
               "RelativeToolTip": "..\\Src\\SFMLRenderer.cpp",
               "ViewState": "AgIAACMAAAAAAAAAAAAqwC8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-08T18:48:48.405Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T18:48:48.405Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "RelativeToolTip": "..\\Src\\Box2dEmptyApp.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-08T18:48:48.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T18:48:48.562Z"
             },
             {
               "$type": "Document",
@@ -92,8 +90,7 @@
               "RelativeToolTip": "..\\Src\\SFMLRenderer.h",
               "ViewState": "AgIAAAgAAAAAAAAAAAAqwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-08T18:48:48.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T18:48:48.577Z"
             },
             {
               "$type": "Document",
@@ -105,8 +102,7 @@
               "RelativeToolTip": "..\\Src\\Box2DHelper.h",
               "ViewState": "AgIAAH4AAAAAAAAAAAAqwIIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-08T18:48:48.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T18:48:48.577Z"
             }
           ]
         }

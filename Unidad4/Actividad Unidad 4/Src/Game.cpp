@@ -22,7 +22,6 @@ Game::Game(int width, int height, const std::string& title) {
 	if (!texturaMetal.loadFromFile("metalrustico.png")) {}
 	if (!texturaMetalPlat.loadFromFile("MetalPlataforma.png")) {}
 	if (!texturaMetalRueda.loadFromFile("MetalRueda.png")) {}
-	if (!texturaPlataforma.loadFromFile("plataforma.png")) {}
 	if (!texturaFondo.loadFromFile("ImagenFondo.png")) {}
 	if (!texturaCañon.loadFromFile("ImagenCañon2.png")) {}
 	if (!fuente.loadFromFile("font.ttf")) {}
@@ -42,7 +41,7 @@ Game::Game(int width, int height, const std::string& title) {
 
 	// --- INICIALIZACIÓN DE ELEMENTOS ---
 	CreateBoundaries(width, height); // Crear paredes del mundo
-	CreateObstacles();               // Crear obstáculos iniciales (Level 0)
+	       
 	estadoActual = GameState::MAIN_MENU;
 	InicializarBotones();            // Configurar botones de la interfaz
 }
@@ -354,11 +353,7 @@ void Game::CreateBoundaries(float width, float height) {
 	CreateWall({ wW / 2, wH + thickness * 2 }, { wW, thickness * 2 }); // Suelo
 }
 
-void Game::CreateObstacles() {
-	// Obstáculos por defecto (pueden ser usados para un nivel de tutorial)
-	obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(10.0f, 5.0f), 3.0f, 0.5f, true, texturaPlataforma));
-	obstaculos.push_back(std::make_unique<Obstaculo>(physicsWorld, b2Vec2(15.0f, 5.0f), 1.0f, 1.0f, false, texturaCaja));
-}
+
 
 void Game::FireRagdoll() {
 	// Cálculo de posición de spawn en la punta del cañón

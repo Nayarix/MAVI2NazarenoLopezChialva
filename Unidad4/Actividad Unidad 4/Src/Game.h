@@ -19,7 +19,6 @@ public:
     b2Body* brazoDer;
     b2Body* piernaIzq;
     b2Body* piernaDer;
-    b2Body* escudo; // (Opcional según implementación final)
 
     // --- Uniones Físicas (Joints) ---
     b2Joint* cuello;
@@ -73,7 +72,6 @@ private:
 
     // --- Recursos Visuales (Texturas) ---
     sf::Texture texturaCaja;
-    sf::Texture texturaPlataforma;
     sf::Texture texturaMetal;
     sf::Texture texturaMetalPlat;
     sf::Texture texturaMetalRueda;
@@ -133,7 +131,6 @@ public:
     void UpdateCannonRotation();               // Rota el cañón hacia el mouse
     void FireRagdoll();                        // Crea e impulsa un nuevo ragdoll
     void CreateBoundaries(float width, float height); // Crea los límites del mundo
-    void CreateObstacles();                    // Crea obstáculos genéricos
     float CalculatePower(const sf::Vector2f& mousePos); // Calcula potencia de disparo
 
     // --- Métodos de Dibujo y Utilidad ---
