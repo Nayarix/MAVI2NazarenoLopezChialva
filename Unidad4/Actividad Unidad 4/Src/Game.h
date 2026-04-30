@@ -68,7 +68,7 @@ private:
     // --- Motores y Ventana ---
     sf::RenderWindow* window;
     b2World* physicsWorld;       // El "universo" donde ocurre la física
-    SFMLRenderer* debugRenderer; // Permite ver las formas físicas (opcional)
+    
 
     // --- Recursos Visuales (Texturas) ---
     sf::Texture texturaCaja;
@@ -80,10 +80,10 @@ private:
 
     // --- Piezas del Cañón ---
     sf::RectangleShape cannonBase;   // Base gris estática
-    sf::RectangleShape cannonBarrel; // Tubo rojo que rota
+    sf::RectangleShape cannonBarrel; // Tubo que rota
 
     // --- Contenedores de Objetos ---
-    // Usamos unique_ptr para una gestión de memoria automática y segura
+    // Uso unique_ptr para una gestión de memoria automática y segura
     std::vector<std::unique_ptr<Ragdoll>> ragdolls;
     std::vector<std::unique_ptr<Obstaculo>> obstaculos;
     std::vector<b2Body*> boundaryWalls; // Paredes invisibles de los bordes
@@ -135,6 +135,6 @@ public:
 
     // --- Métodos de Dibujo y Utilidad ---
     void DrawBody(b2Body* body, const sf::Color& color); // Dibuja formas de Box2D
-    bool EsClicEnBoton(const Boton& b, const sf::Vector2i& mousePos); // Detección de clics
+    bool EsClicEnBoton(const Boton& b, const sf::Vector2f& mousePos); // Detección de clics
     void LimpiarMundo(); // Destruye cuerpos físicos al cambiar de escena
 };

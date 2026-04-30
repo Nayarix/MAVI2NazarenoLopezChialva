@@ -4,6 +4,7 @@
 // ============================================================
 // CLASE Box2DHelper: Automatización de creación de cuerpos
 // Provee métodos estáticos para simplificar el flujo de Box2D
+// MUCHOS DE ESTYOS METODOS NO SE ESTAN UTILIZANDO EN ESTE PROYECTO, PERO SE DEJAN COMO REFERENCIA PARA FUTURAS MEJORAS
 // ============================================================
 class Box2DHelper
 {
@@ -13,9 +14,12 @@ public:
 
 	// Crea un cuerpo dinámico: se mueve por fuerzas, gravedad y colisiones
 	static b2Body* CreateDynamicBody(b2World* phyWorld) {
+		//Definimos el cuerpo
 		b2BodyDef bodyDef;
+		//le damos valores al body
 		bodyDef.type = b2_dynamicBody;
 		bodyDef.position.Set(0.0f, 0.0f);
+		//Creamos el body
 		return phyWorld->CreateBody(&bodyDef);
 	}
 
@@ -145,6 +149,4 @@ public:
 		body->CreateFixture(&poly);
 		return body;
 	}
-
-	// (Nota: Los métodos Kinematic y Static siguen el mismo patrón de arriba)
 };

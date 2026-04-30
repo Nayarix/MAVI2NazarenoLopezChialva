@@ -1,3 +1,16 @@
+// ============================================================
+// CLASE SFMLRenderer: Automatización de dibujo con SFML
+// Provee métodos para simplificar el renderizado de objetos Box2D
+// NO SE ESTA UTILIZANDO EN ESTE PROYECTO, PERO SE DEJA COMO REFERENCIA PARA FUTURAS MEJORAS
+// LA BASE DE ESTE PROYECTO PROVENIA DE UN EJEMPLOPUBLICADO EN LA CATEDRA, PERO DECIDÍ HACER UN RENDERIZADO MANUAL PARA ENTENDER MEJOR CÓMO FUNCIONA LA INTEGRACIÓN ENTRE BOX2D Y SFML
+// ============================================================
+
+
+
+
+
+
+/* 
 #include "SFMLRenderer.h"
 
 // --- CONSTRUCTOR ---
@@ -15,6 +28,7 @@ SFMLRenderer::~SFMLRenderer(void)
 // --- DIBUJAR POLÍGONO (Solo contorno) ---
 void SFMLRenderer::DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
 {
+
     sf::ConvexShape polygon;
     polygon.setFillColor(Color(0, 0, 0, 0)); // Fondo transparente
     polygon.setOutlineColor(box2d2SFMLColor(color)); // Color de Box2D convertido a SFML
@@ -153,3 +167,5 @@ Color SFMLRenderer::box2d2SFMLColor(const b2Color& _color)
 
     return Color(R, G, B);
 }
+
+*/

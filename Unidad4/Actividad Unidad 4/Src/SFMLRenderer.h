@@ -1,13 +1,19 @@
-#pragma once
+// ============================================================
+// CLASE SFMLRenderer: Automatización de dibujo con SFML
+// Provee métodos para simplificar el renderizado de objetos Box2D
+// NO SE ESTA UTILIZANDO EN ESTE PROYECTO, PERO SE DEJA COMO REFERENCIA PARA FUTURAS MEJORAS
+// LA BASE DE ESTE PROYECTO PROVENIA DE UN EJEMPLOPUBLICADO EN LA CATEDRA, PERO DECIDÍ HACER UN RENDERIZADO MANUAL PARA ENTENDER MEJOR CÓMO FUNCIONA LA INTEGRACIÓN ENTRE BOX2D Y SFML
+// ============================================================
+
+
+
+
+/*#pragma once
 #include <Box2D/Box2D.h>
 #include <SFML\Graphics.hpp>
 
 using namespace sf;
 
-// ============================================================
-// CLASE SFMLRenderer: El puente visual entre Box2D y SFML
-// Hereda de b2Draw para poder usar el sistema DebugDraw de Box2D
-// ============================================================
 class SFMLRenderer : public b2Draw
 {
 private:
@@ -57,3 +63,5 @@ public:
 	// Dibuja la "Caja de Alineación" (AABB) que Box2D usa para cálculos rápidos de colisión
 	void DrawAABB(b2AABB* aabb, const b2Color& color);
 };
+
+*/
